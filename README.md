@@ -1,5 +1,6 @@
 # Multimodal Research
-All experiments done for classifying multimodal data. These experiments are the results produced by the model in: https://github.com/Damorgal/Biprojection-Multimodal-Transformer
+
+All experiments were done to classify multimodal data. These experiments are the results produced by the model: https://github.com/Damorgal/Biprojection-Multimodal-Transformer
 
 This includes: 
 
