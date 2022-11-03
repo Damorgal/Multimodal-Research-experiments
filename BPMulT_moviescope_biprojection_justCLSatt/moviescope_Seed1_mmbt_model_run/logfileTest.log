@@ -1,0 +1,81 @@
+INFO - 05/15/22 03:17:52 - 0:00:00 - a_len: 3
+                                     adapter_size: 64
+                                     aonly: True
+                                     attn_dropout: 0.1
+                                     attn_dropout_a: 0.0
+                                     attn_dropout_v: 0.0
+                                     attn_mask: True
+                                     batch_sz: 8
+                                     bert_model: bert-base-uncased
+                                     chunk_size: 100
+                                     config_file: /home/est_posgrado_diego.moreno/vilbert-multi-task/config/bert_base_6layer_6conect.json
+                                     data_path: /home/est_posgrado_diego.moreno/Workspace/Tesis/multimodal-transformers-movies/datasets
+                                     drop_img_percent: 0.0
+                                     dropout: 0.1
+                                     embed_dropout: 0.25
+                                     embed_sz: 300
+                                     freeze_img: 0
+                                     freeze_txt: 0
+                                     from_pretrained: /home/est_posgrado_diego.moreno/vilbert-multi-task/save/multi_task_model.bin
+                                     from_seed: 1
+                                     glove_path: /path/to/glove_embeds/glove.840B.300d.txt
+                                     gradient_accumulation_steps: 8
+                                     hidden: []
+                                     hidden_sz: 768
+                                     hybrid: False
+                                     img_embed_pool_type: avg
+                                     img_hidden_sz: 2048
+                                     include_bn: True
+                                     inverse_seed: False
+                                     just_test: False
+                                     l_len: 512
+                                     label_freqs: Counter({'Drama': 1803, 'Comedy': 1276, 'Thriller': 1010, 'Action': 825, 'Romance': 767, 'Fantasy': 665, 'Crime': 610, 'Sci-Fi': 424, 'Horror': 395, 'Family': 385, 'Mystery': 343, 'Biography': 207, 'Animation': 175})
+                                     labels: ['Mystery', 'Thriller', 'Comedy', 'Action', 'Crime', 'Drama', 'Fantasy', 'Family', 'Horror', 'Biography', 'Romance', 'Sci-Fi', 'Animation']
+                                     layers: 5
+                                     lonly: True
+                                     lr: 5e-05
+                                     lr_factor: 0.5
+                                     lr_patience: 2
+                                     max_epochs: 100
+                                     max_seq_len: 512
+                                     model: mmtrvapt
+                                     n_classes: 13
+                                     n_workers: 12
+                                     name: moviescope_Seed1_mmbt_model_run
+                                     nlevels: 5
+                                     num_heads: 12
+                                     num_image_embeds: 3
+                                     num_images: 8
+                                     orig_d_a: 96
+                                     orig_d_l: 768
+                                     orig_d_p: 4096
+                                     orig_d_v: 4096
+                                     out_dropout: 0.0
+                                     output_gates: False
+                                     patience: 6
+                                     pooling: cls
+                                     relu_dropout: 0.1
+                                     res_dropout: 0.1
+                                     savedir: /home/est_posgrado_diego.moreno/Workspace/Tesis/multimodal-transformers-movies/BPMulT_moviescope_biprojection_justCLSatt/moviescope_Seed1_mmbt_model_run
+                                     seed: 1
+                                     task: moviescope
+                                     task_type: multilabel
+                                     train_data_len: 3449
+                                     train_type: split
+                                     trained_model_dir: 
+                                     v_len: 3
+                                     vision_scratch: False
+                                     visual: both
+                                     vocab: <mmbt.data.vocab.Vocab object at 0x7fef1c0fb580>
+                                     vocab_sz: 30522
+                                     vonly: True
+                                     warmup: 0.1
+                                     weight_classes: 1
+INFO - 05/15/22 03:17:52 - 0:00:00 - Test - : Loss: 1.56084
+                                     | Macro F1 71.658 | Micro F1: 73.915 | AP Macro: 78.745 | AP Micro: 81.672 | AP Samples: 87.554
+DEBUG - 05/15/22 03:17:52 - 0:00:00 - Starting new HTTPS connection (1): s3.amazonaws.com:443
+INFO - 05/15/22 03:17:57 - 0:00:05 - loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/est_posgrado_diego.moreno/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+DEBUG - 05/15/22 03:17:57 - 0:00:05 - Starting new HTTPS connection (1): s3.amazonaws.com:443
+INFO - 05/15/22 03:18:07 - 0:00:15 - loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/est_posgrado_diego.moreno/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+DEBUG - 05/15/22 03:18:08 - 0:00:15 - Starting new HTTPS connection (1): huggingface.co:443
+DEBUG - 05/15/22 03:18:13 - 0:00:20 - Starting new HTTPS connection (1): huggingface.co:443
