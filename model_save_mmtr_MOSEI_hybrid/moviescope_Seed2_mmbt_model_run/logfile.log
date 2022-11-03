@@ -1,0 +1,1313 @@
+INFO - 05/03/22 18:24:03 - 0:00:00 - a_len: 3
+                                     adapter_size: 64
+                                     aonly: True
+                                     attn_dropout: 0.1
+                                     attn_dropout_a: 0.0
+                                     attn_dropout_v: 0.0
+                                     attn_mask: True
+                                     batch_sz: 14
+                                     bert_model: bert-base-uncased
+                                     chunk_size: 100
+                                     config_file: /home/est_posgrado_diego.moreno/vilbert-multi-task/config/bert_base_6layer_6conect.json
+                                     data_path: /home/est_posgrado_diego.moreno/Workspace/Tesis/multimodal-transformers-movies/datasets
+                                     drop_img_percent: 0.0
+                                     dropout: 0.1
+                                     embed_dropout: 0.25
+                                     embed_sz: 300
+                                     freeze_img: 0
+                                     freeze_txt: 0
+                                     from_pretrained: /home/est_posgrado_diego.moreno/vilbert-multi-task/save/multi_task_model.bin
+                                     from_seed: 1
+                                     glove_path: /path/to/glove_embeds/glove.840B.300d.txt
+                                     gradient_accumulation_steps: 8
+                                     hidden: []
+                                     hidden_sz: 300
+                                     hybrid: True
+                                     img_embed_pool_type: avg
+                                     img_hidden_sz: 2048
+                                     include_bn: True
+                                     inverse_seed: False
+                                     just_test: False
+                                     l_len: 512
+                                     label_freqs: Counter({'happiness': 8732, 'sadness': 4269, 'anger': 3524, 'disgust': 2954, 'surprise': 1642, 'fear': 1331})
+                                     labels: ['fear', 'happiness', 'sadness', 'disgust', 'anger', 'surprise']
+                                     layers: 4
+                                     lonly: True
+                                     lr: 5e-05
+                                     lr_factor: 0.5
+                                     lr_patience: 2
+                                     max_epochs: 100
+                                     max_seq_len: 512
+                                     model: mmtrvat
+                                     n_classes: 6
+                                     n_workers: 12
+                                     name: moviescope_Seed2_mmbt_model_run
+                                     nlevels: 5
+                                     num_heads: 10
+                                     num_image_embeds: 3
+                                     num_images: 8
+                                     orig_d_a: 74
+                                     orig_d_l: 768
+                                     orig_d_p: 4096
+                                     orig_d_v: 35
+                                     out_dropout: 0.0
+                                     output_gates: False
+                                     patience: 5
+                                     pooling: cls
+                                     relu_dropout: 0.1
+                                     res_dropout: 0.1
+                                     savedir: /home/est_posgrado_diego.moreno/Workspace/Tesis/multimodal-transformers-movies/model_save_mmtr_MOSEI_hybrid/moviescope_Seed2_mmbt_model_run
+                                     seed: 2
+                                     task: cmu-mosei
+                                     task_type: multilabel
+                                     train_data_len: 16326
+                                     train_type: split
+                                     trained_model_dir: 
+                                     v_len: 3
+                                     vision_scratch: False
+                                     visual: both
+                                     vocab: <mmbt.data.vocab.Vocab object at 0x7fc4a03b9f70>
+                                     vocab_sz: 30522
+                                     vonly: True
+                                     warmup: 0.1
+                                     weight_classes: 1
+INFO - 05/03/22 18:24:03 - 0:00:00 - DataParallel(
+                                       (module): MultiprojectionMMTransformer3DGMUClf(
+                                         (enc): BertEncoder(
+                                           (bert): BertModel(
+                                             (embeddings): BertEmbeddings(
+                                               (word_embeddings): Embedding(30522, 768, padding_idx=0)
+                                               (position_embeddings): Embedding(512, 768)
+                                               (token_type_embeddings): Embedding(2, 768)
+                                               (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                               (dropout): Dropout(p=0.1, inplace=False)
+                                             )
+                                             (encoder): BertEncoder(
+                                               (layer): ModuleList(
+                                                 (0): BertLayer(
+                                                   (attention): BertAttention(
+                                                     (self): BertSelfAttention(
+                                                       (query): Linear(in_features=768, out_features=768, bias=True)
+                                                       (key): Linear(in_features=768, out_features=768, bias=True)
+                                                       (value): Linear(in_features=768, out_features=768, bias=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                     )
+                                                     (output): BertSelfOutput(
+                                                       (dense): Linear(in_features=768, out_features=768, bias=True)
+                                                       (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                       (attention_text_task_adapters): ModuleDict()
+                                                       (adapter_fusion_layer): ModuleDict()
+                                                       (attention_text_lang_adapters): ModuleDict()
+                                                     )
+                                                   )
+                                                   (intermediate): BertIntermediate(
+                                                     (dense): Linear(in_features=768, out_features=3072, bias=True)
+                                                   )
+                                                   (output): BertOutput(
+                                                     (dense): Linear(in_features=3072, out_features=768, bias=True)
+                                                     (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                     (dropout): Dropout(p=0.1, inplace=False)
+                                                     (adapter_fusion_layer): ModuleDict()
+                                                     (layer_text_task_adapters): ModuleDict()
+                                                     (layer_text_lang_adapters): ModuleDict()
+                                                   )
+                                                 )
+                                                 (1): BertLayer(
+                                                   (attention): BertAttention(
+                                                     (self): BertSelfAttention(
+                                                       (query): Linear(in_features=768, out_features=768, bias=True)
+                                                       (key): Linear(in_features=768, out_features=768, bias=True)
+                                                       (value): Linear(in_features=768, out_features=768, bias=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                     )
+                                                     (output): BertSelfOutput(
+                                                       (dense): Linear(in_features=768, out_features=768, bias=True)
+                                                       (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                       (attention_text_task_adapters): ModuleDict()
+                                                       (adapter_fusion_layer): ModuleDict()
+                                                       (attention_text_lang_adapters): ModuleDict()
+                                                     )
+                                                   )
+                                                   (intermediate): BertIntermediate(
+                                                     (dense): Linear(in_features=768, out_features=3072, bias=True)
+                                                   )
+                                                   (output): BertOutput(
+                                                     (dense): Linear(in_features=3072, out_features=768, bias=True)
+                                                     (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                     (dropout): Dropout(p=0.1, inplace=False)
+                                                     (adapter_fusion_layer): ModuleDict()
+                                                     (layer_text_task_adapters): ModuleDict()
+                                                     (layer_text_lang_adapters): ModuleDict()
+                                                   )
+                                                 )
+                                                 (2): BertLayer(
+                                                   (attention): BertAttention(
+                                                     (self): BertSelfAttention(
+                                                       (query): Linear(in_features=768, out_features=768, bias=True)
+                                                       (key): Linear(in_features=768, out_features=768, bias=True)
+                                                       (value): Linear(in_features=768, out_features=768, bias=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                     )
+                                                     (output): BertSelfOutput(
+                                                       (dense): Linear(in_features=768, out_features=768, bias=True)
+                                                       (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                       (attention_text_task_adapters): ModuleDict()
+                                                       (adapter_fusion_layer): ModuleDict()
+                                                       (attention_text_lang_adapters): ModuleDict()
+                                                     )
+                                                   )
+                                                   (intermediate): BertIntermediate(
+                                                     (dense): Linear(in_features=768, out_features=3072, bias=True)
+                                                   )
+                                                   (output): BertOutput(
+                                                     (dense): Linear(in_features=3072, out_features=768, bias=True)
+                                                     (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                     (dropout): Dropout(p=0.1, inplace=False)
+                                                     (adapter_fusion_layer): ModuleDict()
+                                                     (layer_text_task_adapters): ModuleDict()
+                                                     (layer_text_lang_adapters): ModuleDict()
+                                                   )
+                                                 )
+                                                 (3): BertLayer(
+                                                   (attention): BertAttention(
+                                                     (self): BertSelfAttention(
+                                                       (query): Linear(in_features=768, out_features=768, bias=True)
+                                                       (key): Linear(in_features=768, out_features=768, bias=True)
+                                                       (value): Linear(in_features=768, out_features=768, bias=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                     )
+                                                     (output): BertSelfOutput(
+                                                       (dense): Linear(in_features=768, out_features=768, bias=True)
+                                                       (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                       (attention_text_task_adapters): ModuleDict()
+                                                       (adapter_fusion_layer): ModuleDict()
+                                                       (attention_text_lang_adapters): ModuleDict()
+                                                     )
+                                                   )
+                                                   (intermediate): BertIntermediate(
+                                                     (dense): Linear(in_features=768, out_features=3072, bias=True)
+                                                   )
+                                                   (output): BertOutput(
+                                                     (dense): Linear(in_features=3072, out_features=768, bias=True)
+                                                     (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                     (dropout): Dropout(p=0.1, inplace=False)
+                                                     (adapter_fusion_layer): ModuleDict()
+                                                     (layer_text_task_adapters): ModuleDict()
+                                                     (layer_text_lang_adapters): ModuleDict()
+                                                   )
+                                                 )
+                                                 (4): BertLayer(
+                                                   (attention): BertAttention(
+                                                     (self): BertSelfAttention(
+                                                       (query): Linear(in_features=768, out_features=768, bias=True)
+                                                       (key): Linear(in_features=768, out_features=768, bias=True)
+                                                       (value): Linear(in_features=768, out_features=768, bias=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                     )
+                                                     (output): BertSelfOutput(
+                                                       (dense): Linear(in_features=768, out_features=768, bias=True)
+                                                       (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                       (attention_text_task_adapters): ModuleDict()
+                                                       (adapter_fusion_layer): ModuleDict()
+                                                       (attention_text_lang_adapters): ModuleDict()
+                                                     )
+                                                   )
+                                                   (intermediate): BertIntermediate(
+                                                     (dense): Linear(in_features=768, out_features=3072, bias=True)
+                                                   )
+                                                   (output): BertOutput(
+                                                     (dense): Linear(in_features=3072, out_features=768, bias=True)
+                                                     (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                     (dropout): Dropout(p=0.1, inplace=False)
+                                                     (adapter_fusion_layer): ModuleDict()
+                                                     (layer_text_task_adapters): ModuleDict()
+                                                     (layer_text_lang_adapters): ModuleDict()
+                                                   )
+                                                 )
+                                                 (5): BertLayer(
+                                                   (attention): BertAttention(
+                                                     (self): BertSelfAttention(
+                                                       (query): Linear(in_features=768, out_features=768, bias=True)
+                                                       (key): Linear(in_features=768, out_features=768, bias=True)
+                                                       (value): Linear(in_features=768, out_features=768, bias=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                     )
+                                                     (output): BertSelfOutput(
+                                                       (dense): Linear(in_features=768, out_features=768, bias=True)
+                                                       (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                       (attention_text_task_adapters): ModuleDict()
+                                                       (adapter_fusion_layer): ModuleDict()
+                                                       (attention_text_lang_adapters): ModuleDict()
+                                                     )
+                                                   )
+                                                   (intermediate): BertIntermediate(
+                                                     (dense): Linear(in_features=768, out_features=3072, bias=True)
+                                                   )
+                                                   (output): BertOutput(
+                                                     (dense): Linear(in_features=3072, out_features=768, bias=True)
+                                                     (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                     (dropout): Dropout(p=0.1, inplace=False)
+                                                     (adapter_fusion_layer): ModuleDict()
+                                                     (layer_text_task_adapters): ModuleDict()
+                                                     (layer_text_lang_adapters): ModuleDict()
+                                                   )
+                                                 )
+                                                 (6): BertLayer(
+                                                   (attention): BertAttention(
+                                                     (self): BertSelfAttention(
+                                                       (query): Linear(in_features=768, out_features=768, bias=True)
+                                                       (key): Linear(in_features=768, out_features=768, bias=True)
+                                                       (value): Linear(in_features=768, out_features=768, bias=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                     )
+                                                     (output): BertSelfOutput(
+                                                       (dense): Linear(in_features=768, out_features=768, bias=True)
+                                                       (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                       (attention_text_task_adapters): ModuleDict()
+                                                       (adapter_fusion_layer): ModuleDict()
+                                                       (attention_text_lang_adapters): ModuleDict()
+                                                     )
+                                                   )
+                                                   (intermediate): BertIntermediate(
+                                                     (dense): Linear(in_features=768, out_features=3072, bias=True)
+                                                   )
+                                                   (output): BertOutput(
+                                                     (dense): Linear(in_features=3072, out_features=768, bias=True)
+                                                     (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                     (dropout): Dropout(p=0.1, inplace=False)
+                                                     (adapter_fusion_layer): ModuleDict()
+                                                     (layer_text_task_adapters): ModuleDict()
+                                                     (layer_text_lang_adapters): ModuleDict()
+                                                   )
+                                                 )
+                                                 (7): BertLayer(
+                                                   (attention): BertAttention(
+                                                     (self): BertSelfAttention(
+                                                       (query): Linear(in_features=768, out_features=768, bias=True)
+                                                       (key): Linear(in_features=768, out_features=768, bias=True)
+                                                       (value): Linear(in_features=768, out_features=768, bias=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                     )
+                                                     (output): BertSelfOutput(
+                                                       (dense): Linear(in_features=768, out_features=768, bias=True)
+                                                       (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                       (attention_text_task_adapters): ModuleDict()
+                                                       (adapter_fusion_layer): ModuleDict()
+                                                       (attention_text_lang_adapters): ModuleDict()
+                                                     )
+                                                   )
+                                                   (intermediate): BertIntermediate(
+                                                     (dense): Linear(in_features=768, out_features=3072, bias=True)
+                                                   )
+                                                   (output): BertOutput(
+                                                     (dense): Linear(in_features=3072, out_features=768, bias=True)
+                                                     (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                     (dropout): Dropout(p=0.1, inplace=False)
+                                                     (adapter_fusion_layer): ModuleDict()
+                                                     (layer_text_task_adapters): ModuleDict()
+                                                     (layer_text_lang_adapters): ModuleDict()
+                                                   )
+                                                 )
+                                                 (8): BertLayer(
+                                                   (attention): BertAttention(
+                                                     (self): BertSelfAttention(
+                                                       (query): Linear(in_features=768, out_features=768, bias=True)
+                                                       (key): Linear(in_features=768, out_features=768, bias=True)
+                                                       (value): Linear(in_features=768, out_features=768, bias=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                     )
+                                                     (output): BertSelfOutput(
+                                                       (dense): Linear(in_features=768, out_features=768, bias=True)
+                                                       (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                       (attention_text_task_adapters): ModuleDict()
+                                                       (adapter_fusion_layer): ModuleDict()
+                                                       (attention_text_lang_adapters): ModuleDict()
+                                                     )
+                                                   )
+                                                   (intermediate): BertIntermediate(
+                                                     (dense): Linear(in_features=768, out_features=3072, bias=True)
+                                                   )
+                                                   (output): BertOutput(
+                                                     (dense): Linear(in_features=3072, out_features=768, bias=True)
+                                                     (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                     (dropout): Dropout(p=0.1, inplace=False)
+                                                     (adapter_fusion_layer): ModuleDict()
+                                                     (layer_text_task_adapters): ModuleDict()
+                                                     (layer_text_lang_adapters): ModuleDict()
+                                                   )
+                                                 )
+                                                 (9): BertLayer(
+                                                   (attention): BertAttention(
+                                                     (self): BertSelfAttention(
+                                                       (query): Linear(in_features=768, out_features=768, bias=True)
+                                                       (key): Linear(in_features=768, out_features=768, bias=True)
+                                                       (value): Linear(in_features=768, out_features=768, bias=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                     )
+                                                     (output): BertSelfOutput(
+                                                       (dense): Linear(in_features=768, out_features=768, bias=True)
+                                                       (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                       (attention_text_task_adapters): ModuleDict()
+                                                       (adapter_fusion_layer): ModuleDict()
+                                                       (attention_text_lang_adapters): ModuleDict()
+                                                     )
+                                                   )
+                                                   (intermediate): BertIntermediate(
+                                                     (dense): Linear(in_features=768, out_features=3072, bias=True)
+                                                   )
+                                                   (output): BertOutput(
+                                                     (dense): Linear(in_features=3072, out_features=768, bias=True)
+                                                     (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                     (dropout): Dropout(p=0.1, inplace=False)
+                                                     (adapter_fusion_layer): ModuleDict()
+                                                     (layer_text_task_adapters): ModuleDict()
+                                                     (layer_text_lang_adapters): ModuleDict()
+                                                   )
+                                                 )
+                                                 (10): BertLayer(
+                                                   (attention): BertAttention(
+                                                     (self): BertSelfAttention(
+                                                       (query): Linear(in_features=768, out_features=768, bias=True)
+                                                       (key): Linear(in_features=768, out_features=768, bias=True)
+                                                       (value): Linear(in_features=768, out_features=768, bias=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                     )
+                                                     (output): BertSelfOutput(
+                                                       (dense): Linear(in_features=768, out_features=768, bias=True)
+                                                       (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                       (attention_text_task_adapters): ModuleDict()
+                                                       (adapter_fusion_layer): ModuleDict()
+                                                       (attention_text_lang_adapters): ModuleDict()
+                                                     )
+                                                   )
+                                                   (intermediate): BertIntermediate(
+                                                     (dense): Linear(in_features=768, out_features=3072, bias=True)
+                                                   )
+                                                   (output): BertOutput(
+                                                     (dense): Linear(in_features=3072, out_features=768, bias=True)
+                                                     (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                     (dropout): Dropout(p=0.1, inplace=False)
+                                                     (adapter_fusion_layer): ModuleDict()
+                                                     (layer_text_task_adapters): ModuleDict()
+                                                     (layer_text_lang_adapters): ModuleDict()
+                                                   )
+                                                 )
+                                                 (11): BertLayer(
+                                                   (attention): BertAttention(
+                                                     (self): BertSelfAttention(
+                                                       (query): Linear(in_features=768, out_features=768, bias=True)
+                                                       (key): Linear(in_features=768, out_features=768, bias=True)
+                                                       (value): Linear(in_features=768, out_features=768, bias=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                     )
+                                                     (output): BertSelfOutput(
+                                                       (dense): Linear(in_features=768, out_features=768, bias=True)
+                                                       (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                       (dropout): Dropout(p=0.1, inplace=False)
+                                                       (attention_text_task_adapters): ModuleDict()
+                                                       (adapter_fusion_layer): ModuleDict()
+                                                       (attention_text_lang_adapters): ModuleDict()
+                                                     )
+                                                   )
+                                                   (intermediate): BertIntermediate(
+                                                     (dense): Linear(in_features=768, out_features=3072, bias=True)
+                                                   )
+                                                   (output): BertOutput(
+                                                     (dense): Linear(in_features=3072, out_features=768, bias=True)
+                                                     (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                                                     (dropout): Dropout(p=0.1, inplace=False)
+                                                     (adapter_fusion_layer): ModuleDict()
+                                                     (layer_text_task_adapters): ModuleDict()
+                                                     (layer_text_lang_adapters): ModuleDict()
+                                                   )
+                                                 )
+                                               )
+                                             )
+                                             (pooler): BertPooler(
+                                               (dense): Linear(in_features=768, out_features=768, bias=True)
+                                               (activation): Tanh()
+                                             )
+                                             (invertible_lang_adapters): ModuleDict()
+                                           )
+                                         )
+                                         (gmu_l_m): GatedMultimodalLayerFeatures(
+                                           (hidden1): Linear(in_features=300, out_features=300, bias=False)
+                                           (hidden2): Linear(in_features=300, out_features=300, bias=False)
+                                           (x_gate): Linear(in_features=600, out_features=300, bias=False)
+                                         )
+                                         (gmu_v_m): GatedMultimodalLayerFeatures(
+                                           (hidden1): Linear(in_features=300, out_features=300, bias=False)
+                                           (hidden2): Linear(in_features=300, out_features=300, bias=False)
+                                           (x_gate): Linear(in_features=600, out_features=300, bias=False)
+                                         )
+                                         (gmu_a_m): GatedMultimodalLayerFeatures(
+                                           (hidden1): Linear(in_features=300, out_features=300, bias=False)
+                                           (hidden2): Linear(in_features=300, out_features=300, bias=False)
+                                           (x_gate): Linear(in_features=600, out_features=300, bias=False)
+                                         )
+                                         (gmu_l): GatedMultimodalLayerFeatures(
+                                           (hidden1): Linear(in_features=300, out_features=300, bias=False)
+                                           (hidden2): Linear(in_features=300, out_features=300, bias=False)
+                                           (x_gate): Linear(in_features=600, out_features=300, bias=False)
+                                         )
+                                         (gmu_v): GatedMultimodalLayerFeatures(
+                                           (hidden1): Linear(in_features=300, out_features=300, bias=False)
+                                           (hidden2): Linear(in_features=300, out_features=300, bias=False)
+                                           (x_gate): Linear(in_features=600, out_features=300, bias=False)
+                                         )
+                                         (gmu_a): GatedMultimodalLayerFeatures(
+                                           (hidden1): Linear(in_features=300, out_features=300, bias=False)
+                                           (hidden2): Linear(in_features=300, out_features=300, bias=False)
+                                           (x_gate): Linear(in_features=600, out_features=300, bias=False)
+                                         )
+                                         (gmu_early): TextShifting3Layer(
+                                           (hidden1): Linear(in_features=40, out_features=300, bias=False)
+                                           (hidden2): Linear(in_features=40, out_features=300, bias=False)
+                                           (hidden3): Linear(in_features=40, out_features=300, bias=False)
+                                           (x1_gate): Linear(in_features=120, out_features=300, bias=False)
+                                           (x2_gate): Linear(in_features=120, out_features=300, bias=False)
+                                           (x3_gate): Linear(in_features=120, out_features=300, bias=False)
+                                         )
+                                         (proj_l): Conv1d(768, 300, kernel_size=(1,), stride=(1,), bias=False)
+                                         (proj_v): Conv1d(35, 300, kernel_size=(1,), stride=(1,), bias=False)
+                                         (proj_a): Conv1d(74, 300, kernel_size=(1,), stride=(1,), bias=False)
+                                         (trans_l_with_a): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (trans_l_with_v): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (trans_l_with_v2a): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (trans_l_with_a2v): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (trans_v_with_l): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (trans_v_with_a): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (trans_v_with_l2a): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (trans_v_with_a2l): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (trans_a_with_l): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (trans_a_with_v): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (trans_a_with_v2l): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (trans_a_with_l2v): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=300, out_features=300, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=300, out_features=1200, bias=True)
+                                               (fc2): Linear(in_features=1200, out_features=300, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((300,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (proj1): Linear(in_features=300, out_features=300, bias=True)
+                                         (proj2): Linear(in_features=300, out_features=300, bias=True)
+                                         (out_layer): Linear(in_features=300, out_features=6, bias=True)
+                                         (gmu): TextShiftingNLayer(
+                                           (hiddens): ModuleList(
+                                             (0): Linear(in_features=300, out_features=300, bias=False)
+                                             (1): Linear(in_features=300, out_features=300, bias=False)
+                                             (2): Linear(in_features=300, out_features=300, bias=False)
+                                             (3): Linear(in_features=300, out_features=300, bias=False)
+                                           )
+                                           (x_gates): ModuleList(
+                                             (0): Linear(in_features=1200, out_features=300, bias=False)
+                                             (1): Linear(in_features=1200, out_features=300, bias=False)
+                                             (2): Linear(in_features=1200, out_features=300, bias=False)
+                                             (3): Linear(in_features=1200, out_features=300, bias=False)
+                                           )
+                                         )
+                                         (transfm_a2l): Linear(in_features=500, out_features=512, bias=True)
+                                         (transfm_v2l): Linear(in_features=500, out_features=512, bias=True)
+                                         (transfm_l2a): Linear(in_features=512, out_features=500, bias=True)
+                                         (transfm_l2v): Linear(in_features=512, out_features=500, bias=True)
+                                         (trans_l_early): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=40, out_features=40, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=40, out_features=160, bias=True)
+                                               (fc2): Linear(in_features=160, out_features=40, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=40, out_features=40, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=40, out_features=160, bias=True)
+                                               (fc2): Linear(in_features=160, out_features=40, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=40, out_features=40, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=40, out_features=160, bias=True)
+                                               (fc2): Linear(in_features=160, out_features=40, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=40, out_features=40, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=40, out_features=160, bias=True)
+                                               (fc2): Linear(in_features=160, out_features=40, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (trans_v_early): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=40, out_features=40, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=40, out_features=160, bias=True)
+                                               (fc2): Linear(in_features=160, out_features=40, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=40, out_features=40, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=40, out_features=160, bias=True)
+                                               (fc2): Linear(in_features=160, out_features=40, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=40, out_features=40, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=40, out_features=160, bias=True)
+                                               (fc2): Linear(in_features=160, out_features=40, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=40, out_features=40, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=40, out_features=160, bias=True)
+                                               (fc2): Linear(in_features=160, out_features=40, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (trans_a_early): TransformerEncoder(
+                                           (embed_positions): SinusoidalPositionalEmbedding()
+                                           (layers): ModuleList(
+                                             (0): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=40, out_features=40, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=40, out_features=160, bias=True)
+                                               (fc2): Linear(in_features=160, out_features=40, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (1): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=40, out_features=40, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=40, out_features=160, bias=True)
+                                               (fc2): Linear(in_features=160, out_features=40, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (2): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=40, out_features=40, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=40, out_features=160, bias=True)
+                                               (fc2): Linear(in_features=160, out_features=40, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                             (3): TransformerEncoderLayer(
+                                               (self_attn): MultiheadAttention(
+                                                 (out_proj): Linear(in_features=40, out_features=40, bias=True)
+                                               )
+                                               (fc1): Linear(in_features=40, out_features=160, bias=True)
+                                               (fc2): Linear(in_features=160, out_features=40, bias=True)
+                                               (layer_norms): ModuleList(
+                                                 (0): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                                 (1): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                               )
+                                             )
+                                           )
+                                           (layer_norm): LayerNorm((40,), eps=1e-05, elementwise_affine=True)
+                                         )
+                                         (proj_l_e): Linear(in_features=300, out_features=40, bias=False)
+                                         (proj_v_e): Linear(in_features=300, out_features=40, bias=False)
+                                         (proj_a_e): Linear(in_features=300, out_features=40, bias=False)
+                                       )
+                                     )
+INFO - 05/03/22 18:24:04 - 0:00:00 - Training..
+INFO - 05/03/22 18:42:08 - 0:18:04 - Train Loss: 0.1366
+INFO - 05/03/22 18:42:08 - 0:18:04 - Val: Loss: 1.05894
+                                     |    Anger   |   Disgust  |    Fear    |    Happy   |     Sad    |  Surprise  |   Average  | APS_micro
+                                       WA: 65.665 | WA: 57.521 | WA: 63.722 | WA: 74.692 | WA: 63.173 | WA: 65.246 | WA: 65.003 | APS: 65.003
+                                       F1: 26.154 | F1: 72.299 | F1: 50.654 | F1: 46.253 | F1: 38.177 | F1: 27.605 | F1: 43.524
+INFO - 05/03/22 19:00:32 - 0:36:28 - Train Loss: 0.1217
+INFO - 05/03/22 19:00:32 - 0:36:28 - Val: Loss: 1.09424
+                                     |    Anger   |   Disgust  |    Fear    |    Happy   |     Sad    |  Surprise  |   Average  | APS_micro
+                                       WA: 66.629 | WA: 65.682 | WA: 64.058 | WA: 74.802 | WA: 62.400 | WA: 65.533 | WA: 66.517 | APS: 66.517
+                                       F1: 26.310 | F1: 73.571 | F1: 50.607 | F1: 49.005 | F1: 37.546 | F1: 31.893 | F1: 44.822
+INFO - 05/03/22 19:18:43 - 0:54:40 - Train Loss: 0.1073
+INFO - 05/03/22 19:18:43 - 0:54:40 - Val: Loss: 1.16690
+                                     |    Anger   |   Disgust  |    Fear    |    Happy   |     Sad    |  Surprise  |   Average  | APS_micro
+                                       WA: 61.983 | WA: 63.722 | WA: 64.231 | WA: 73.776 | WA: 62.976 | WA: 67.488 | WA: 65.696 | APS: 65.696
+                                       F1: 23.702 | F1: 72.895 | F1: 50.282 | F1: 48.101 | F1: 38.453 | F1: 31.681 | F1: 44.186
+INFO - 05/03/22 19:36:50 - 1:12:46 - Train Loss: 0.0903
+INFO - 05/03/22 19:36:50 - 1:12:46 - Val: Loss: 1.29533
+                                     |    Anger   |   Disgust  |    Fear    |    Happy   |     Sad    |  Surprise  |   Average  | APS_micro
+                                       WA: 66.640 | WA: 65.617 | WA: 64.140 | WA: 75.432 | WA: 63.356 | WA: 65.702 | WA: 66.814 | APS: 66.814
+                                       F1: 26.403 | F1: 72.759 | F1: 50.467 | F1: 50.785 | F1: 38.665 | F1: 34.043 | F1: 45.521
+INFO - 05/03/22 19:55:01 - 1:30:58 - Train Loss: 0.0739
+INFO - 05/03/22 19:55:01 - 1:30:58 - Val: Loss: 1.60781
+                                     |    Anger   |   Disgust  |    Fear    |    Happy   |     Sad    |  Surprise  |   Average  | APS_micro
+                                       WA: 60.853 | WA: 65.405 | WA: 63.436 | WA: 73.298 | WA: 63.685 | WA: 65.875 | WA: 65.425 | APS: 65.425
+                                       F1: 24.675 | F1: 71.068 | F1: 49.968 | F1: 49.438 | F1: 39.538 | F1: 34.608 | F1: 44.883
+INFO - 05/03/22 20:13:04 - 1:49:01 - Train Loss: 0.0630
+INFO - 05/03/22 20:13:04 - 1:49:01 - Val: Loss: 1.84357
+                                     |    Anger   |   Disgust  |    Fear    |    Happy   |     Sad    |  Surprise  |   Average  | APS_micro
+                                       WA: 59.705 | WA: 67.027 | WA: 63.746 | WA: 73.339 | WA: 65.666 | WA: 59.926 | WA: 64.902 | APS: 64.902
+                                       F1: 24.164 | F1: 69.608 | F1: 50.408 | F1: 49.171 | F1: 40.590 | F1: 28.866 | F1: 43.801
+INFO - 05/03/22 20:31:04 - 2:07:00 - Train Loss: 0.0535
+INFO - 05/03/22 20:31:04 - 2:07:00 - Val: Loss: 2.29880
+                                     |    Anger   |   Disgust  |    Fear    |    Happy   |     Sad    |  Surprise  |   Average  | APS_micro
+                                       WA: 55.722 | WA: 65.000 | WA: 65.039 | WA: 72.369 | WA: 63.031 | WA: 63.575 | WA: 64.123 | APS: 64.123
+                                       F1: 19.689 | F1: 71.722 | F1: 50.796 | F1: 50.394 | F1: 38.903 | F1: 31.522 | F1: 43.838
+INFO - 05/03/22 20:49:01 - 2:24:58 - Train Loss: 0.0393
+INFO - 05/03/22 20:49:01 - 2:24:58 - Val: Loss: 2.61029
+                                     |    Anger   |   Disgust  |    Fear    |    Happy   |     Sad    |  Surprise  |   Average  | APS_micro
+                                       WA: 57.024 | WA: 66.714 | WA: 63.559 | WA: 70.443 | WA: 63.195 | WA: 63.320 | WA: 64.042 | APS: 64.042
+                                       F1: 20.771 | F1: 70.509 | F1: 49.217 | F1: 47.833 | F1: 38.864 | F1: 32.258 | F1: 43.242
+INFO - 05/03/22 21:07:06 - 2:43:03 - Train Loss: 0.0312
+INFO - 05/03/22 21:07:06 - 2:43:03 - Val: Loss: 2.99180
+                                     |    Anger   |   Disgust  |    Fear    |    Happy   |     Sad    |  Surprise  |   Average  | APS_micro
+                                       WA: 55.883 | WA: 67.087 | WA: 62.775 | WA: 69.491 | WA: 60.897 | WA: 62.542 | WA: 63.112 | APS: 63.112
+                                       F1: 19.630 | F1: 69.887 | F1: 48.413 | F1: 47.000 | F1: 35.955 | F1: 32.346 | F1: 42.205
+INFO - 05/03/22 21:07:14 - 2:43:11 - No improvement. Breaking out of loop.
+DEBUG - 05/03/22 21:07:14 - 2:43:11 - Starting new HTTPS connection (1): s3.amazonaws.com:443
+INFO - 05/03/22 21:07:19 - 2:43:16 - loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/est_posgrado_diego.moreno/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+DEBUG - 05/03/22 21:07:19 - 2:43:16 - Starting new HTTPS connection (1): s3.amazonaws.com:443
+INFO - 05/03/22 21:07:24 - 2:43:21 - loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/est_posgrado_diego.moreno/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+DEBUG - 05/03/22 21:07:24 - 2:43:21 - Starting new HTTPS connection (1): huggingface.co:443
+DEBUG - 05/03/22 21:07:30 - 2:43:26 - Starting new HTTPS connection (1): huggingface.co:443

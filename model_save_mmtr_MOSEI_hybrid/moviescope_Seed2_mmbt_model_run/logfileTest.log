@@ -1,0 +1,83 @@
+INFO - 05/03/22 21:10:22 - 0:00:00 - a_len: 3
+                                     adapter_size: 64
+                                     aonly: True
+                                     attn_dropout: 0.1
+                                     attn_dropout_a: 0.0
+                                     attn_dropout_v: 0.0
+                                     attn_mask: True
+                                     batch_sz: 14
+                                     bert_model: bert-base-uncased
+                                     chunk_size: 100
+                                     config_file: /home/est_posgrado_diego.moreno/vilbert-multi-task/config/bert_base_6layer_6conect.json
+                                     data_path: /home/est_posgrado_diego.moreno/Workspace/Tesis/multimodal-transformers-movies/datasets
+                                     drop_img_percent: 0.0
+                                     dropout: 0.1
+                                     embed_dropout: 0.25
+                                     embed_sz: 300
+                                     freeze_img: 0
+                                     freeze_txt: 0
+                                     from_pretrained: /home/est_posgrado_diego.moreno/vilbert-multi-task/save/multi_task_model.bin
+                                     from_seed: 1
+                                     glove_path: /path/to/glove_embeds/glove.840B.300d.txt
+                                     gradient_accumulation_steps: 8
+                                     hidden: []
+                                     hidden_sz: 300
+                                     hybrid: True
+                                     img_embed_pool_type: avg
+                                     img_hidden_sz: 2048
+                                     include_bn: True
+                                     inverse_seed: False
+                                     just_test: False
+                                     l_len: 512
+                                     label_freqs: Counter({'happiness': 8732, 'sadness': 4269, 'anger': 3524, 'disgust': 2954, 'surprise': 1642, 'fear': 1331})
+                                     labels: ['fear', 'happiness', 'sadness', 'disgust', 'anger', 'surprise']
+                                     layers: 4
+                                     lonly: True
+                                     lr: 5e-05
+                                     lr_factor: 0.5
+                                     lr_patience: 2
+                                     max_epochs: 100
+                                     max_seq_len: 512
+                                     model: mmtrvat
+                                     n_classes: 6
+                                     n_workers: 12
+                                     name: moviescope_Seed2_mmbt_model_run
+                                     nlevels: 5
+                                     num_heads: 10
+                                     num_image_embeds: 3
+                                     num_images: 8
+                                     orig_d_a: 74
+                                     orig_d_l: 768
+                                     orig_d_p: 4096
+                                     orig_d_v: 35
+                                     out_dropout: 0.0
+                                     output_gates: False
+                                     patience: 5
+                                     pooling: cls
+                                     relu_dropout: 0.1
+                                     res_dropout: 0.1
+                                     savedir: /home/est_posgrado_diego.moreno/Workspace/Tesis/multimodal-transformers-movies/model_save_mmtr_MOSEI_hybrid/moviescope_Seed2_mmbt_model_run
+                                     seed: 2
+                                     task: cmu-mosei
+                                     task_type: multilabel
+                                     train_data_len: 16326
+                                     train_type: split
+                                     trained_model_dir: 
+                                     v_len: 3
+                                     vision_scratch: False
+                                     visual: both
+                                     vocab: <mmbt.data.vocab.Vocab object at 0x7fc4a0891640>
+                                     vocab_sz: 30522
+                                     vonly: True
+                                     warmup: 0.1
+                                     weight_classes: 1
+INFO - 05/03/22 21:10:22 - 0:00:00 - Test - : Loss: 1.30062
+                                     |    Anger   |   Disgust  |    Fear    |    Happy   |     Sad    |  Surprise  |   Average  | APS_micro
+                                       WA: 68.773 | WA: 68.396 | WA: 66.631 | WA: 74.767 | WA: 67.393 | WA: 60.464 | WA: 67.737 | APS: 67.737
+                                       F1: 26.734 | F1: 74.982 | F1: 49.112 | F1: 52.410 | F1: 48.903 | F1: 25.305 | F1: 46.241
+DEBUG - 05/03/22 21:10:22 - 0:00:00 - Starting new HTTPS connection (1): s3.amazonaws.com:443
+INFO - 05/03/22 21:10:27 - 0:00:05 - loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/est_posgrado_diego.moreno/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+DEBUG - 05/03/22 21:10:28 - 0:00:05 - Starting new HTTPS connection (1): s3.amazonaws.com:443
+INFO - 05/03/22 21:10:33 - 0:00:10 - loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/est_posgrado_diego.moreno/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+DEBUG - 05/03/22 21:10:33 - 0:00:10 - Starting new HTTPS connection (1): huggingface.co:443
+DEBUG - 05/03/22 21:10:38 - 0:00:15 - Starting new HTTPS connection (1): huggingface.co:443
